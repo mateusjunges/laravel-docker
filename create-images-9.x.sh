@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-for PHP_VERSION in "8.0" "8.1"
+for PHP_VERSION in "8.1" "8.2"
 do
     for LIBRDKAFKA_VERSION in "v1.6.0" "v1.6.1" "v1.6.2" "v1.7.0" "v1.8.0" "v1.8.2"
     do
