@@ -8,7 +8,7 @@ ARG LARAVEL_VERSION
 
 
 RUN apk update && \
-    apk add git zlib-dev libressl-dev libsasl zstd-dev zstd-static build-base && \
+    apk add git zlib-dev libressl-dev libsasl zstd-dev build-base && \
     git config --global advice.detachedHead false && \
     apk add bash
 
@@ -29,4 +29,4 @@ RUN composer global require laravel/installer
 WORKDIR /application
 
 RUN cd /application && \
-    composer create-project --prefer-dist laravel/laravel laravel-test "${LARAVEL_VERSION}.*"
+    composer create-project --prefer-dist laravel/laravel laravel-test "${LARAVEL_VERSION}"
