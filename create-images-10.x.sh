@@ -2,14 +2,14 @@
 
 for PHP_VERSION in "8.1" "8.2"
 do
-    for LIBRDKAFKA_VERSION in "v1.6.0" "v1.6.1" "v1.6.2" "v1.7.0" "v1.8.0" "v1.8.2"
+    for LIBRDKAFKA_VERSION in "v1.8.2"
     do
-        for EXT_RDKAFKA_VERSION in "5.0.0" "5.0.1" "5.0.2" "6.0.0"
+        for EXT_RDKAFKA_VERSION in "6.0.0"
         do
-            for LARAVEL_VERSION in "10.x-dev"
+            for LARAVEL_VERSION in "10"
             do
                 TAG=${PHP_VERSION}-${LIBRDKAFKA_VERSION}-${EXT_RDKAFKA_VERSION}-${LARAVEL_VERSION}
-
+                echo $TAG
                 docker build --tag \
                     mateusjunges/laravel:${TAG} \
                     --build-arg PHP_VERSION=${PHP_VERSION} \
