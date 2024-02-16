@@ -6,13 +6,12 @@ ARG LIBRDKAFKA_VERSION
 ARG EXT_RDKAFKA_VERSION
 ARG LARAVEL_VERSION
 
-
 RUN apk update && \
-    apk add git zlib-dev libressl-dev libsasl zstd-dev build-base && \
+    apk add git zlib-dev openssl-dev libsasl zstd-dev build-base && \
     git config --global advice.detachedHead false && \
     apk add bash
 
-RUN git clone --branch ${LIBRDKAFKA_VERSION} https://github.com/edenhill/librdkafka.git && \
+RUN git clone --depth=1 --branch ${LIBRDKAFKA_VERSION} https://github.com/edenhill/librdkafka.git && \
     cd librdkafka && \
     ./configure --install-deps && \
     make && \
