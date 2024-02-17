@@ -1,6 +1,9 @@
 # Laravel Docker Image
 This image is used to test [`mateusjunges/laravel-kafka` package](https://github.com/mateusjunges/laravel-kafka).
 
+> [!NOTE]  
+> Archiving this as I moved laravel kafka test suite to a simpler github CI setup and dropped integration tests.
+
 ## Build
 To build this image, you can use this command:
 
